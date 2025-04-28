@@ -1,6 +1,7 @@
 class StringCalculator
   def add(numbers)
-    0
+    return 0 if numbers.empty?
+    numbers.to_i
   end
 end
 
@@ -10,5 +11,9 @@ RSpec.describe StringCalculator do
   it 'returns 0 for empty string' do
     calc = StringCalculator.new
     expect(calc.add("")).to eq(0)
+  end
+  it 'returns the number itself when only one number is provided' do
+    calc = StringCalculator.new
+    expect(calc.add("5")).to eq(5)
   end
 end
